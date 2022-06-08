@@ -10,6 +10,7 @@ namespace Entity
     {
         public int IdNotas { get; set; }
         public int IdAlumno { get; set; }
+        public string sNombreAlumno { get; set; }
         public int IdCurso { get; set; }
         public string sNombreCurso { get; set; }
         public decimal nPractica1 { get; set; }

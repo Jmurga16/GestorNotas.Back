@@ -50,6 +50,8 @@ namespace Data
 
                                 entity.IdNotas = Int32.Parse(Convert.ToString(dr["IdNotas"]));
                                 entity.IdAlumno = Int32.Parse(Convert.ToString(dr["IdAlumno"]));
+                                entity.sNombreAlumno = Convert.ToString(dr["sNombreAlumno"]);
+
                                 entity.IdCurso = Int32.Parse(Convert.ToString(dr["IdCurso"]));
                                 entity.sNombreCurso = Convert.ToString(dr["sNombreCurso"]);
                                 entity.nPractica1 = Decimal.Parse(Convert.ToString(dr["nPractica1"]));
@@ -76,7 +78,7 @@ namespace Data
                     case "04":
                     case "05":
 
-                        string sResultado = Convert.ToString(oCon.EjecutarEscalar("USP_MNT_AlumnosxCurso", genEnt.sOpcion, genEnt.pParametro));
+                        string sResultado = Convert.ToString(oCon.EjecutarEscalar("USP_MNT_Notas", genEnt.sOpcion, genEnt.pParametro));
                         msj = sResultado;
 
                         return msj;
