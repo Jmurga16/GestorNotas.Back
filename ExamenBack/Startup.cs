@@ -61,7 +61,7 @@ namespace ExamenBack
 
                 app.UseCors(options =>
                 {
-                    options.WithOrigins("http://localhost:4200", "http://localhost:4500");
+                    options.WithOrigins("https://examen-efitec.azurewebsites.net");
                     options.AllowAnyMethod();
                     options.AllowAnyHeader();
                 });
