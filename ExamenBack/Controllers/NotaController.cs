@@ -3,14 +3,17 @@ using Entity;
 using Microsoft.AspNetCore.Mvc;
 using NLog;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ParcialDAD_Back.Controllers
 {
-    [Route("AlumnoService")]
+    [Route("NotaService")]
     [ApiController]
-    public class AlumnoController : Controller
+    public class NotaController : Controller
     {
-        private readonly AlumnoBusiness objBusiness = new AlumnoBusiness();
+        private readonly NotaBusiness objBusiness = new NotaBusiness();
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         #region CRUD Alumno
@@ -23,7 +26,7 @@ namespace ParcialDAD_Back.Controllers
             {
                 try
                 {
-                    var vRes = objBusiness.BusinessAlumno(genEnt);
+                    var vRes = objBusiness.BusinessNota(genEnt);
 
                     return Ok(vRes);
                 }
@@ -42,7 +45,7 @@ namespace ParcialDAD_Back.Controllers
                 {
                     string[] listaRes;
 
-                    string sResultado = Convert.ToString(objBusiness.BusinessAlumno(genEnt));
+                    string sResultado = Convert.ToString(objBusiness.BusinessNota(genEnt));
                     listaRes = sResultado.Split('|');
 
                     return Ok(new { cod = listaRes[0], mensaje = listaRes[1] });
