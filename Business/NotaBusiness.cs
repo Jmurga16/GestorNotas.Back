@@ -5,18 +5,18 @@ using System;
 
 namespace Business
 {
-    public class CursoBusiness
+    public class NotaBusiness
     {
-        private readonly CursoData CursoData = new CursoData();
+        private readonly NotaData notaData = new NotaData();
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
 
-        public object BusinessCurso(GeneralEntity genEnt)
+        public object BusinessNota(GeneralEntity genEnt)
         {
             try
             {
 
-                return CursoData.DataCurso(genEnt);
+                return notaData.DataNota(genEnt);
 
             }
             catch (Exception e)

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    class GeneralEntity
+    public class GeneralEntity
     {
+        public string sOpcion { get; set; }
+        public string pParametro { get; set; }
     }
 }

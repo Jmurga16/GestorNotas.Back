@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    class AlumnoEntity
+    public class AlumnoEntity
     {
+        public int IdAlumno { get; set; }
+        public string sCodAlu { get; set; }
+        public string sNombrePri { get; set; }
+        public string sNombreSec { get; set; }
+        public string sApellidoPaterno { get; set; }
+        public string sApellidoMaterno { get; set; }
+        public string dFechaNacimiento { get; set; }
+        public string sSexo { get; set; }
+        public bool bEstado { get; set; }
+
     }
 }
