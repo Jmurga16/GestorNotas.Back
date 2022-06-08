@@ -1,4 +1,5 @@
 ﻿using Entity;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,7 +16,7 @@ namespace Data
         #region Conexion
         private readonly Conexion oCon;
 
-        public AlumnosxCursoData()
+        public NotaData()
         {
             oCon = new Conexion(1);
         }
@@ -25,7 +26,7 @@ namespace Data
 
 
         #region Alumnos
-        public object DataAlumnosxCurso(GeneralEntity genEnt)
+        public object DataNota(GeneralEntity genEnt)
         {
 
             string msj = string.Empty;
@@ -39,7 +40,7 @@ namespace Data
                     case "01":
                     case "02":
 
-                        using (IDataReader dr = oCon.ejecutarDataReader("USP_MNT_AlumnosxCurso", genEnt.sOpcion, genEnt.pParametro))
+                        using (IDataReader dr = oCon.ejecutarDataReader("USP_MNT_Notas", genEnt.sOpcion, genEnt.pParametro))
                         {
 
                             while (dr.Read())

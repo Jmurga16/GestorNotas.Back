@@ -14,7 +14,8 @@ namespace Entity
         public string sNombreSec { get; set; }
         public string sApellidoPaterno { get; set; }
         public string sApellidoMaterno { get; set; }
-        public string dFechaNacimiento { get; set; }
+        public DateTime dFechaNacimiento { get; set; }
+        public string dFechaNac { get; set; }
         public string sSexo { get; set; }
         public bool bEstado { get; set; }
 

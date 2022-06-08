@@ -39,9 +39,32 @@ namespace ExamenBack
         {
             if (env.IsDevelopment())
             {
+                app.UseCors(options =>
+                {
+                    options.WithOrigins("http://localhost:4200", "http://localhost:4500");
+                    options.AllowAnyMethod();
+                    options.AllowAnyHeader();
+                });
+
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ExamenBack v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CRMLegalAPI v1"));
+            }
+            else
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CRMLegalAPI v1");
+                    c.RoutePrefix = string.Empty;
+                });
+
+                app.UseCors(options =>
+                {
+                    options.WithOrigins("http://localhost:4200", "http://localhost:4500");
+                    options.AllowAnyMethod();
+                    options.AllowAnyHeader();
+                });
             }
 
             app.UseHttpsRedirection();

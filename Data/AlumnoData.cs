@@ -52,13 +52,16 @@ namespace Data
                                 entity.sCodAlu = Convert.ToString(dr["sCodAlu"]);
                                 entity.sNombrePri = Convert.ToString(dr["sNombrePri"]);
                                 entity.sNombreSec = Convert.ToString(dr["sNombreSec"]);
-
                                 entity.sApellidoPaterno = Convert.ToString(dr["sApellidoPaterno"]);
                                 entity.sApellidoMaterno = Convert.ToString(dr["sApellidoMaterno"]);
-                                entity.dFechaNacimiento = Convert.ToString(dr["dFechaNacimiento"]);
-                                entity.sSexo = Convert.ToString(dr["dFechaNacimiento"]);
-
+                                entity.dFechaNacimiento = Convert.ToDateTime(Convert.ToString(dr["dFechaNacimiento"]));                               
+                                entity.sSexo = Convert.ToString(dr["sSexo"]);
                                 entity.bEstado = Boolean.Parse(Convert.ToString(dr["bEstado"]));
+
+                                if(genEnt.sOpcion=="02")
+                                {
+                                    entity.dFechaNac = Convert.ToString(dr["dFechaNac"]);
+                                }
 
                                 listaAlumno.Add(entity);
 
